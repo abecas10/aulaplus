@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Red Social</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<form id="login">
+			<h2>Iniciar Sesión</h2>
+			<label>
+				Nombre de Usuario
+				<input id="login-username" type="text" placeholder="Nombre de usuario" />
+			</label>
+			<label>
+				Contraseña
+				<input type="password" id="login-password" oninput="validarContraseña()" placeholder="Contraseña" />
+				<p id="mensajeError" style="color: red;"></p>
+			</label>
+			<button type="submit">Iniciar Sesión</button>
+		</form>
+		<form id="register">
+			<h2>Registrarse</h2>
+			<label>
+				Nombre de Usuario
+				<input id="register-username" type="text" placeholder="Utiliza un nombre de usuario que te identifique fácilmente" />
+			</label>
+			<label>
+				Mail
+				<input id="register-mail" type="email" placeholder="Utiliza tu mail para poder recibir las notificaciones" />
+			</label>
+			<label>
+				Contraseña
+				<input type="password" id="register-password" oninput="validarContraseña2()" placeholder="Contraseña" />
+				<p id="mensajeError2" style="color: red;"></p>
+			</label>
+			<button type="submit">Registrarse</button>
+		</form>
+
+		<script src="/index.js"></script>
+	</body>
+</html>

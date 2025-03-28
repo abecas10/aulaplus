@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Red Social</title>
+		<link rel="stylesheet" href="style4.css" />
+	</head>
+    <body>
+        <h1>Superuser site</h1>
+        <p>Me da palo hacer esta pagina mejor asi que hos jodeis y la pagina es fea :)</p>
+        <p>Si no eres superusuario, te rogamos que salgas de esta pagina inmediatamente y informes al administrador de la red inmediatamente</p>
+        <h2>Formulario:</h2>
+        <p>Si el usuario, a comprado 1 tema, ponga un 2, si a comprado apuntes para todo el curso, ponga un 3, y si no a comprado nada, ponga un 1 o dejelo en blanco</p>
+        <h3>Si deseas crear a un usuario que antes no estaba en esa base de datos, presione enviar 1, sino, si quiere actualizar los datos de alguien, presione enviar 2</h3>
+        <h3>Al editar un usuario, no se tienen en cuenta lo que ya tenia antes, asi que por favor, ponga todas las materias que el usuario ya tenia</h3>
+        <h3>Editar sirve para no duplicar a alguien en la base de datos</h3>
+        <div class="form">
+            <label>
+                Username
+                <input type="text" name="Username" class = "forminput" id="username_input" placeholder="Username">
+            </label>
+            <label>
+                Sociales
+                <input type="text" name="Sociales" class = "forminput" id="sociales_input" placeholder="Sociales">
+            </label>
+            <label>
+                Fisica y quimica
+                <input type="text" name="Fisica y quimica" class = "forminput" id="fisica_y_quimica_input" placeholder="Fisica y quimica">
+            </label>
+            <label>
+                Ingles
+                <input type="text" name="Ingles" class = "forminput" id="ingles_input" placeholder="Ingles">
+            </label>
+            <label>
+                Geologia y biologia
+                <input type="text" name="Geologia y biologia" class = "forminput" id="geologia_y_biologia_input" placeholder="Geologia y biologia">
+            </label>
+            <label>
+                Francés
+                <input type="text" name="Francés" class = "forminput" id="frances_input" placeholder="Francés">
+            </label>
+            <label>
+                Catalán
+                <input type="text" name="Catalán" class = "forminput" id="catalan_input" placeholder="Catalán">
+            </label>
+            <label>
+                Castellano
+                <input type="text" name="Castellano" class = "forminput" id="castellano_input" placeholder="Castellano">
+            </label>
+            <label>
+                Musica
+                <input type="text" name="Musica" class = "forminput" id="musica_input" placeholder="Musica">
+            </label>
+            <label>
+                Matemáticas
+                <input type="text" name="Matemáticas" class = "forminput" id="matematicas_input" placeholder="Matemáticas">
+            </label>
+            <label>
+                Informática
+                <input type="text" name="Informática" class = "forminput" id="informatica_input" placeholder="Informática">
+            </label>
+            <label>
+                Otros
+                <input type="text" name="Otros" class = "forminput" id="otros_input" placeholder="Otros">
+            </label>
+            <button type="submit" id="submit_button1">Enviar 1</button>
+            <button type="submit" id="submit_button2">Enviar 2</button>
+        </div>
+        <div class="get_materias">
+            <h2>Get Materias</h2>
+            <p>Si quieres ver las materias que un usuario a comprado, coloca su username y presiona el boton</p>
+            <label>
+                Username
+                <input type="text" name="Username" class = "forminput" id="username_get" placeholder="Username">
+            </label>
+            <button type="submit" id="get_button">Get Materias</button>
+        </div>
+
+        <div class = "delete_user">
+            <h2>Delete User</h2>
+            <p>Si quieres borrar un usuario, coloca su username y presiona el boton</p>
+            <h3>Al eliminar a un usuario, se eliminaran todas las materias que tenga, y sera eliminado de la base de datos</h3>
+            <h3>No se puede borrar un usuario si tiene posts publicados, checkea los posts antes de borrar o la base de datos petara!</h3>
+            <h3>Si lo que deseas es borrar materias independientes, puedes hacerlo en el primer formulario!</h3>
+            <label>
+                Username
+                <input type="text" name="Username" class = "forminput" id="username_delete" placeholder="Username">
+            </label>
+            <button type="submit" id="delete_button">Delete User</button>
+        </div>
+
+        <div class = "delete_user">
+            <h2>Eliminar post</h2>
+            <p>Si quieres borrar un post, coloca su id y presiona el boton</p>
+            <label>
+                Id
+                <input type="text" name="Id" class = "forminput" id="id_delete" placeholder="Id">
+            </label>
+            <button type="submit" id="delete_post_button">Delete Post</button>
+        </div>
+
+        <div id="resultado"></div>
+        <script src="/superuser.js"></script>
+    </body>
+<html>
