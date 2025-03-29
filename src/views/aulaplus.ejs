@@ -1,146 +1,189 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Red Social</title>
-		<link rel="stylesheet" href="style2.css" />
-	</head>
-	<body>
-		<main>
-			<div class="Titulo">
-				<h1>Aula +</h1>
-			</div>
-	
-			<nav class="nav1">
-				<ul>
-					<li class="apuntes_drop">
-						<a href="/apuntes" class = "apuntes" id="apuntes">Apuntes</a>
-						<div class="apuntes_content">
-							<a href="">Informatica</a>
-							<a href="">Sociales</a>
-							<a href="">Fsisica y Quimica</a>
-							<a href="">Geologia y Biologia</a>
-							<a href="">Castellano</a>
-							<a href="">Catalan</a>
-							<a href="">Francés</a>
-							<a href="">Ingles</a>
-							<a href="">Matematicas</a>
-							<a href="">Musica</a>
-						</div>
-					</li>
-					<li><a href="/esquemas" id="esquemas">Esquemas</a></li>
-					<li><a href="/clases">Clases</a></li>
-					<li><a href="/agenda">Agenda digital</a></li>
-					<li><button id="contactoBtn"><a href="/home">Opiniones</a></button></li>
-					<li><a href="/superuser">Superusuario</a></li>
-				</ul>
-			</nav>
-	
-			<div class="text1">
-				<h3>En esta página web, los creadores (Àlex, Gabriel e Irene) ofrecemos contenido relacionado con Aula que los estudiantes podréis comprar y recibir en formato PDF o físico.</h3>
-				<h3></h3>
-				<h3>Vendemos 4 servicios que están explicados cada uno en su apartado y estos son:</h3>
-				<ul>
-					<li><a href="/apuntes">Apuntes</a></li>
-					<li><a href="/esquemas">Esquemas</a></li>
-					<li><a href="/clases">Clases</a></li>
-					<li><a href="/agenda">Agenda digital</a></li>
-				</ul>
-				<h3>Este servicio solo esta disponible para el curso Earhart (ESO 4)</h3>
-			</div>
-			<div id="precios">
-				<h1 class="title">Precios y Pagos</h1>
-				<nav class="nav2">
-					<ul>
-						<li class="sub-nav">Precio apuntes de un solo tema</li>
-						<nav class="sub-nav1">
-							<ul>
-								<li>Matematicas:</li>
-								<nav class="sub-nav1-1">
-									<ul>
-										<li>A ordenador: 2€</li>
-										<li>A mano: 2,50€</li>
-									</ul>
-								</nav>
-								<li>Física y Química:</li>
-								<nav class="sub-nav1-1">
-									<ul>
-										<li>A ordenador: 3€</li>
-										<li>A mano: 3,50€</li>
-									</ul>
-								</nav>
-								<li>Geologia y biologia:</li>
-								<nav class="sub-nav1-1">
-									<ul>
-										<li>A ordenador: 3€</li>
-										<li>A mano: 3,50€</li>
-									</ul>
-								</nav>
-								<li>Lenguas:</li>
-								<nav class="sub-nav1-1">
-									<ul>
-										<li>A ordenador: 2€</li>
-										<li>A mano: 2,50€</li>
-									</ul>
-								</nav class="sub-nav1-1">
-								<li>Sociales:</li>
-								<nav class="sub-nav1-1">
-									<ul>
-										<li>A ordenador: 3€</li>
-										<li>A mano: 3,50€</li>
-									</ul>
-								</nav>
-							</ul>
-						</nav>
-						<li class ="sub-nav">Precio por apuntes durante todo el año por asignatura (a ordenador)</li>
-						<nav class="sub-nav1">
-							<ul>
-								<li>Matematicas: 11€</li>
-								<li>Física y Química: 12€</li>
-								<li>Geologia y biologia: 12€</li>
-								<li>Lenguas: 10€</li>
-								<li>Sociales: 12€</li>
-							</ul>
-						</nav>
-						<li class="sub-nav">Precios de clases</li>
-						<nav class="sub-nav1">
-							<ul>
-								<li>Clase de 30 min: 3€</li>
-								<li>Clase de 60 min: 7€</li>
-							</ul>
-						</nav>
-						<li class = "sub-nav">Agenda digital durante todo el curso: 10€</li>
-						<li class="sub-nav">Esquemas</li>
-						<nav class="sub-nav1">
-							<ul>
-								<li>1,50€ por unidad</li>
-								<li>Personalizado segun el tema, examen y preferencias del estudiante</li>
-							</ul>
-						</nav>
-						<li class="sub-nav">A quien tengo que pagar y de qué forma?</li>
-						<nav class="sub-nav1">
-							<ul>
-								<li>Bizum: +34 669 57 71 81</li>
-								<li>Pagos presenciales: Irene, Àlex o Gabriel</li>
-							</ul>
-						</nav>
-							</ul>
-						</nav>
-					</ul>
-				</nav>
-				<h1 class ="sub-nav">¡Importante!</h1>
-				<p class = "sub-nav1">Al comprar un producto de aula + estas haceptando nuestros terminos y condiciones</p>
-			</div>
-		</main>
 
-		<footer>
-			<p>&copy; Site made by albecas100</p>
+
+<html>
+    <head>
+        <style>
+            .Hola{
+                width:100%;
+                border-radius: 20px;
+                display: inline-block;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .Images{
+                display: flex;
+                flex-direction: column;
+                transform: translateY(-70px);
+                height: 500px;
+                margin-left: 250px;
+                width:450px;
+                animation: scrollAnimationRight 1s linear;
+                animation-timeline: view();
+                animation-range:entry -15% cover 30%; /*Weird offset, if 0% animation finished earlier*/
+            }
+            .ImgApuntes2{
+                margin-right:10px;
+                height: 100%;
+                width:49%;
+                display: inline-block;
+                
+                
+            }
+            .Container{
+                display: inline-block; /*esto esta aqui pq en el CSS no se guarda la propiedad, ns pq*/
+            }
+            .ImagenesVerticales{
+                display: flex;
+                flex-direction: row;
+            
+            }
+            .QueHacemosMasImagenes{
+                display: flex;
+                flex-direction: row;
+
+            }
+            .textoPagos{
+                transform: translateY(70px-);
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="icon" type="image/png" href="imgs/Aula+_logo.jpg">
+
+        <link rel ="stylesheet" href="style2.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <main>
+            <div class="colorone">
+                <div class="toolbar"> 
+                    <ul class="options">
+                        <li class="Asignaturas">Mis Apuntes
+                            <ul class="AsignaturasDesplegable">
+                                <li>Mates</li>
+                                <li>Física y Química</li>
+                                <li>Informática</li>
+                                <li>Biología</li>
+                                <li>Sociales</li>
+                                <li>Castellano</li>
+                                <li>Catalán</li>
+                                <li>Inglés</li>
+                                <li>Francés</li>
+                            
+                            </ul>
+                        </li>
+                        <li class="Clases">Clases</li>
+                        <li class="Agenda_Digital">Agenda digital</li>
+
+                    </ul>
+                </div>
+                <p class="Title">Aula+</p>
+            
+
+            </div>
+
+
+            <div class="other_color">
+                <p class="avgTitle">¿Qué hacemos?</p>
+                <div class="QueHacemosMasImagenes">
+                    <div class="Container">
+                        <p class="textQueHacemos">En esta página web, los creadores (Àlex, Gabriel e Irene) ofrecemos contenido relacionado con Aula que los estudiantes podréis comprar y recibir en formato PDF o físico.
+                            Vendemos 4 servicios que están explicados cada uno en su apartado y estos son:
+                            -Apuntes
+                            -Esquemas
+                            -Clases
+                            -Una agenda digital
+                            Este servicio solo esta disponible para el curso Earhart (ESO 4)
+                        </p>
+                    </div>
+                    <div class="Images">
+                        <img src="https://mrpaper.es/modules/ph_simpleblog/covers/7.jpg" class="Hola"></img>
+
+                        <div class="ImagenesVerticales"> 
+                            <img src="imgs/Apuntes2.jpg" class="ImgApuntes2"></img>
+                            <img src="imgs/Apuntes3.jpg" class="ImgApuntes2"></img>
+                        
+                        </div>
+                    
+
+                    </div>
+                </div>
+                <div class="PreciosYPagos">
+
+                    <div class="avgTitle">Precios y pagos</div>
+
+                    <div class="Container2">
+                        <p class="textQueHacemos">Un solo tema</p>
+                        <ul class="ListaPrecios">
+
+                            <li class="textoPagos">Matemáticas: 2.5€</li>
+                            <li class="textoPagos">Física y Química: 3.5€ </li>
+                            <li class="textoPagos">Geología y Biología: 3.5€</li>
+                            <li class="textoPagos">Lenguas: 2.5€</li>
+                            <li class="textoPagos">Sociales: 3.5€</li>
+                            <li class="textoPagos">Informática: 3.5€</li>
+
+                        </ul>
+
+                        <p class="textQueHacemos">Todo el año</p>
+                        <ul class="ListaPrecios">
+
+                            <li class="textoPagos">Matemáticas: 11€</li>
+                            <li class="textoPagos">Física y Química: 12€ </li>
+                            <li class="textoPagos">Geología y Biología: 12€</li>
+                            <li class="textoPagos">Lenguas: 10€</li>
+                            <li class="textoPagos">Sociales: 13€</li>
+                            <li class="textoPagos">Informática: 12€</li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+            </div>
+
+            <div class="toolbar"> 
+                <ul class="options">
+                    <li class="Asignaturas" id="apuntes">Apuntes y Esquemas
+                        <ul class="AsignaturasDesplegable">
+                            <li>Mates</li>
+                            <li>Física y Química</li>
+                            <li>Informática</li>
+                            <li>Biología</li>
+                            <li>Sociales</li>
+                            <li>Castellano</li>
+                            <li>Catalán</li>
+                            <li>Inglés</li>
+                            <li>Francés</li>
+
+                        </ul>
+                    </li>
+                    <li class="Clases">Clases</li>
+                    <li class="Agenda_Digital">Agenda digital</li>
+                    <li class="Agenda_Digital" id="contactoBtn">Opiniones</li>
+                    <li><a href="/superuser">Superusuario</a></li>
+                </ul>
+            </div>
+
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="100">
+                    <path d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z" data-name="2-Arrow Down" fill="white"/>
+                </svg>
+            </div>
+        </main>
+        <footer>
+			<p>&copy; Site made by: Albecas100 & Gabriel Cereto</p>
 			<p>&copy; All rights reserved</p>
 			<button id="logout">Logout</button>
 		</footer>
-		
 
-		<script src="aulaplus.js"></script>
-	</body>
+        <script src="aulaplus.js"></script>
+    </body>
 </html>

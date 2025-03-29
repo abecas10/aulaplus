@@ -6,3 +6,7 @@ document.querySelector("#logout").addEventListener("click", () => {
 	alert("Te has deslogueado correctamente");
 	window.location.reload();
 });
+
+document.querySelector("#apuntes").addEventListener("click", () => {
+	location.replace(`${window.location.origin}/apuntes`);
+});
