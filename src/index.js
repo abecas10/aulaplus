@@ -8,6 +8,7 @@ import postRoutes from "./routes/post.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import viewRoutes from "./routes/view.routes.js";
 import materiasRoutes from "./routes/materias.routes.js";
+import mailRoutes from "./routes/mail.routes.js";
 
 // MVC
 // Modelo Vista Controlador
@@ -28,5 +29,6 @@ app.use("/", viewRoutes);
 app.use("/post", postRoutes);
 app.use("/user", userRoutes);
 app.use("/materias", materiasRoutes);
+app.use("/mail", mailRoutes);
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

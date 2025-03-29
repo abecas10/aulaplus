@@ -33,4 +33,8 @@ router.get("/me", async (req, res) => {
 	res.render("me");
 });
 
+router.get("/changepassword", async (req, res) => {
+	res.render("changepassword");
+});
+
 export default router;

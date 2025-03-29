@@ -84,7 +84,7 @@ export async function deleteUser(req, res) {
 }
 
 export async function changePassword(req, res) {
-	const {username, password} = req.body;
+	const {username, password, mail} = req.body;
 
 	if (!username) return res.status(400).json({error: "missing username field"});
 	if (!password) return res.status(400).json({error: "missing password field"});
@@ -95,8 +95,32 @@ export async function changePassword(req, res) {
 		const resultUser = await UserModel.updatePassword(user);
 		if (!resultUser) return res.status(400).json({error: "failed to change the password"});
 
+		const transporter = nodemailer.createTransport({
+			service: 'gmail',
+			auth: {
+			user: 'contacto.aula.plus@gmail.com',
+			pass: 'lgcwyliqwisyhjaw'
+			}
+		});
+		
+		const mailOptions = {
+			from: 'contacto.aula.pus@gmail.com',
+			to: mail,
+			subject: 'Cambio de contraseña en Aula +',
+			text: `Hola ${username}, Has cambiado tu contraseña en Aula +\nTu nueva contraseña es ${password}.\n\nRecuerda no compartir tu contraseña con nadie.\n\n¡No olvides echarle un vistazo a todos los servicios que ofrecemos!\n\nSi tienes alguna duda, no dudes en ponerte en contacto con nosotros.\n\nSaludos,\nAula +\n\n\n---------------------\n©2025-2026 Aula +\nContenido exclusivo de Aula +\n©Todos los derechos reservados\nContacto: contacto.aula.plus@gmail.com\nFundadores y Propietarios: Àlex Castellà & Irene Loewe & Gabriel Cereto\nAula +, Because Studying Shouldn’t Be a Struggle.\n---------------------`,
+		};
+		
+		transporter.sendMail(mailOptions, (error, info) => {
+			if (error) {
+			console.log(error);
+			} else {
+			console.log('Correo electrónico enviado: ' + mail + info.response);
+			}
+		});
+
 		return res.json({resultUser});
 	} catch (error) {
+		console.log(error);
 		return res.status(400).json({error: "failed to change the password"});
 	}
 }

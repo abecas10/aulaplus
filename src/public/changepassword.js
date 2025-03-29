@@ -31,13 +31,17 @@ const username = localStorage.getItem("username");
 document.querySelector("#username").textContent = username;
 
 const mail = localStorage.getItem("mail");
-document.querySelector("#mail").textContent = mail;
 const token = localStorage.getItem("token");
 
 document.querySelector("#change-password").addEventListener("click", async () => {
-    if (confirm("¿Estás seguro de que deseas cambiar tu contraseña?")) {
-        alert("Revisa tu correo electrónico para cambiar la contraseña.");
-        const res = await fetch(`${window.location.origin}/mail/mailchangepass1`, {
+    const password = prompt("Introduce tu nueva contraseña:");
+    console.log(password);
+    if (!password) {
+        alert("No has introducido una contraseña.");
+        location.replace(`${window.location.origin}/me`);
+    }
+    else {
+        const res = await fetch(`${window.location.origin}/user/change-password`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -45,31 +49,21 @@ document.querySelector("#change-password").addEventListener("click", async () =>
             },
             body: JSON.stringify({
                 username,
+                password,
                 mail
             }),
         });
+        
+        if (!res.ok) {
+            alert("Error al cambiar la contraseña o la contraseña es menor de 8 caracteres.");
+            alert("contacta a un administrador");
+            console.log(res);
+        }
+        else{
+            alert("Contraseña cambiada con éxito.");
+            location.replace(`${window.location.origin}/me`);
+        }
     }
-    else {
-        alert("No has cambiado la contraseña.");
-    }
+    
 });
 
-document.querySelector("#delete-account").addEventListener("click", async () => {
-    if (confirm("¿Estás seguro de que deseas eliminar tu cuenta?")) {
-        alert("Revisa tu correo electrónico para eliminar tu cuenta.");
-        const res = await fetch(`${window.location.origin}/mail/deleteusermail`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": token,
-            },
-            body: JSON.stringify({
-                username,
-                mail
-            }),
-        });
-    }
-    else {
-        alert("No has eliminado tu cuenta.");
-    }
-});
