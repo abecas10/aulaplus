@@ -1,5 +1,6 @@
 import UserModel from "../models/user.model.js";
 import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
 
 export async function validate(req, res) {
 	if (!req.username) return res.status(401).json({error: "request is not authorized"});
@@ -36,6 +37,29 @@ export async function register(req, res) {
 		if (!resultUser) return res.status(400).json({error: "failed to create the user or the username already exists"});
 
 		const token = jwt.sign({username}, process.env["JWT_SECRET"], {expiresIn: "7d"});
+
+		const transporter = nodemailer.createTransport({
+			service: 'gmail',
+			auth: {
+			user: 'contacto.aula.plus@gmail.com',
+			pass: 'lgcwyliqwisyhjaw'
+			}
+		});
+		
+		const mailOptions = {
+			from: 'contacto.aula.pus@gmail.com',
+			to: mail,
+			subject: '¡Bienvenido a Aula +!',
+			text: `Hola ${username}, ¡bienvenido a Aula +!\nMuchas gracias por registrarte.\n\n¡No olvides echarle un vistazo a todos los servicios que ofrecemos!\n\nSi tienes alguna duda, no dudes en ponerte en contacto con nosotros.\n\nSaludos,\nAula +\n\n\n---------------------\n©2025-2026 Aula +\nContenido exclusivo de Aula +\n©Todos los derechos reservados\nContacto: contacto.aula.plus@gmail.com\nCreado por: Àlex Castellà & Irene Loewe & Gabriel Cereto\nAula +\n---------------------`,
+		};
+		
+		transporter.sendMail(mailOptions, (error, info) => {
+			if (error) {
+			console.log(error);
+			} else {
+			console.log('Correo electrónico enviado: ' + mail + info.response);
+			}
+		});
 
 		return res.json({resultUser, token});
 	} catch (error) {
