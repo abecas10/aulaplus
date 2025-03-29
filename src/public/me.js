@@ -73,3 +73,44 @@ document.querySelector("#delete-account").addEventListener("click", async () => 
         alert("No has eliminado tu cuenta.");
     }
 });
+
+document.querySelector("#change-email").addEventListener("click", async () => {
+    if (confirm("¿Estás seguro de que deseas cambiar tu correo electrónico?")) {
+        const mail = prompt("Introduce tu nuevo correo electrónico:");
+        if (!mail) {
+            alert("No has introducido un correo electrónico.");
+            location.replace(`${window.location.origin}/me`);
+        }
+        const res = await fetch(`${window.location.origin}/user/changeemail`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token,
+            },
+            body: JSON.stringify({
+                username,
+                mail
+            }),
+        });
+        if (res.ok) {
+            alert("Correo electrónico cambiado con éxito.");
+            const res2 = await fetch(`${window.location.origin}/mail/mailchangemail`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token,
+                },
+                body: JSON.stringify({
+                    username,
+                    mail
+                }),
+            });
+        }
+        else {
+            alert("No se ha podido cambiar el correo electrónico.");
+        }
+    }
+    else {
+        alert("No has cambiado tu correo electrónico.");
+    }
+});

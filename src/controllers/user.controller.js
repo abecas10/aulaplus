@@ -140,6 +140,24 @@ export async function getEmail(req, res) {
 	}
 }
 
+export async function changeEmail(req, res) {
+	const {username, mail} = req.body;
+
+	if (!username) return res.status(400).json({error: "missing username field"});
+	if (!mail) return res.status(400).json({error: "missing mail field"});
+
+	const user = {username, mail};
+
+	try {
+		const resuser = await UserModel.changeEmail({user});
+		if (!resuser) return res.status(400).json({error: "failed to change the email"});
+
+		return res.json({resuser});
+	} catch (error) {
+		return res.status(400).json({error: "failed to change the email"});
+	}
+}
+
 // export async function updatePost(req, res) {
 // 	const id = req.params.id;
 // 	const {title, description, username} = req.body;

@@ -93,6 +93,20 @@ const UserModel = {
 			}
 		});
 	});
+	},
+
+	changeEmail: user => {
+		return new Promise((resolve, reject) => {
+			const username = user.user.username;
+			const mail = user.user.mail;
+			db.get("UPDATE mails SET mail = ? WHERE username = ? RETURNING username, mail", [mail, username], (error, row) => {
+				if (error) {
+					console.error(error);
+					reject(error);
+				}
+				resolve(row);
+			});
+		});
 	}
 };
 
