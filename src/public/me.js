@@ -114,3 +114,20 @@ document.querySelector("#change-email").addEventListener("click", async () => {
         alert("No has cambiado tu correo electrónico.");
     }
 });
+
+document.querySelector("#back-button").addEventListener("click", async () => {
+    location.replace(`${window.location.origin}/aulaplus`);
+})
+
+document.querySelector("#logout").addEventListener("click", async () => {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        localStorage.removeItem("mail");
+        localStorage.removeItem("superuser");
+        location.replace(`${window.location.origin}`);
+    }
+    else {
+        alert("No has cerrado sesión.");
+    }
+});

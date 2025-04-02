@@ -84,22 +84,44 @@ form button {
 }
 
 @media only screen and (max-width: 600px) {
+	body {
+		padding: 10px;
+	}
+	
+	nav h1 {
+		font-size: 1.8rem;
+	}
+	
 	form {
-		flex-direction: column;
+		width: 100%;
+		max-width: 100%;
 	}
+	
 	form button {
-		width: fit-content;
-		margin-left: 8rem;
+		width: 100%;
+		margin: 10px 0 0 0;
+		padding: 10px;
 	}
-
+	
 	#post-container {
 		flex-direction: column;
-		justify-content: center;
+		width: 100%;
+		gap: 15px;
+	}
+	
+	.post {
+		min-width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+	
+	form label {
 		width: 100%;
 	}
-
-	form label {
-		width: 70%;
+	
+	.ui-btn {
+		padding: 12px 15px;
+		font-size: 14px;
 	}
 }
 

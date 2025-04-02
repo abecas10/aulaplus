@@ -1,3 +1,10 @@
+setTimeout(() => {
+    document.getElementById('preloader').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('preloader').remove();
+    }, 500);
+}, 2000);
+
 window.onload = async function () {
     const token = localStorage.getItem("token");
     const superuser = localStorage.getItem("superuser");

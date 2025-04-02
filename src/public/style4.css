@@ -1,44 +1,187 @@
-.Titulo {
-    position: relative;
-    width: 800px;
-    height: 120px;
-    margin: 0 auto;
-    text-align: center;
-    color: black;
-    font-size: 3em;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    font-family: sans-serif;
-}
-
-.forminput {
-    display: flex;
-    width: 150px;
-    height: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-}
-
-#resultado {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    margin: 0 auto;
-    text-align: left;
-    color: black;
-    font-size: 1em;
-    font-family: sans-serif;
-    padding: 10px;
-    font-weight: bold;
+/* ===== ESTILOS GENERALES ===== */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: sans-serif;
+    background-color: #f5f9ff;
+    color: #2c3e50;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f9ff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+#preloader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #e0e9ff;
+    border-top-color: #1a73e8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3 {
+    color: #1a73e8;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.2rem;
+    border-bottom: 2px solid #e0e9ff;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #4285f4;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #5f6368;
+}
+
+/* ===== FORMULARIOS ===== */
+.form, .get_materias, .delete_user {
+    background-color: #ffffff;
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.forminput {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 2px solid #e0e9ff;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.forminput:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+/* ===== BOTONES ===== */
+button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+button:hover {
+    background-color: #d2e3fc;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#submit_button1, #submit_button2 {
+    margin-top: 1rem;
+}
+
+#delete_button, #delete_post_button {
+    background-color: #fce8e6;
+    color: #d93025;
+}
+
+#delete_button:hover, #delete_post_button:hover {
+    background-color: #fad2cf;
+}
+
+/* ===== RESULTADO ===== */
+#resultado {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    color: #2c3e50;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .form, .get_materias, .delete_user {
+        padding: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .forminput {
+        padding: 0.7rem;
+    }
+    
+    button {
+        padding: 0.7rem;
+    }
 }

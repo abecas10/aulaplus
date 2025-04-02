@@ -7,8 +7,10 @@
 		<link rel="stylesheet" href="styleme.css" />
 	</head>
     <body>
-
-        <h1 id="username"></h1>
+        <header class="user-header">
+            <h1 id="username"></h1>
+            <button id="back-button" class="back-btn">← Back</button>
+        </header>
 
         <div class="hola">
             <h3>Email:</h3>
@@ -17,11 +19,11 @@
 
         <div id="hola">
             <h2>Opciones:</h2>
+            <button id="logout" class="logout-btn">Cerrar sesión</button>
             <button id="change-password">Cambiar contraseña</button>
-            <button id="delete-account">Eliminar cuenta</button>
             <button id="change-email">Cambiar correo electrónico</button>
+            <button id="delete-account">Eliminar cuenta</button>
         </div>
-
 
         <script src="/me.js"></script>
     </body>
