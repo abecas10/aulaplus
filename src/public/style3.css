@@ -1,26 +1,100 @@
-.Titulo {
-    position: relative;
-    width: 800px;
-    height: 120px;
-    margin: 0 auto;
-    text-align: center;
-    color: black;
-    font-size: 3em;
-    font-family: sans-serif;
+/* ===== ESTILOS GENERALES ===== */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.text1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 800px;
-    height: 300px;
+body {
+    background-color: #f5f9ff;
+    color: #2c3e50;
+    max-width: 800px;
     margin: 0 auto;
-    text-align: left;
-    color: black;
-    font-size: 1em;
-    font-family: sans-serif;
-    padding: 40px;
+    padding: 2rem;
+    line-height: 1.7;
+}
+
+/* ===== TÍTULO PRINCIPAL ===== */
+.Titulo h1 {
+    color: #1a73e8;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #e0e9ff;
+    position: relative;
+}
+
+.Titulo h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #1a73e8, transparent);
+}
+
+/* ===== CONTENIDO DE TEXTO ===== */
+.text1 {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.text1 p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: #3c4a5e;
+    text-align: justify;
+}
+
+.text1 p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== DESTACADOS EN EL TEXTO ===== */
+.text1 p::first-line {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+/* ===== EFECTOS DE HOVER PARA LEGIBILIDAD ===== */
+.text1:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    .Titulo h1 {
+        font-size: 2rem;
+    }
+    
+    .text1 {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .Titulo h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .text1 p {
+        font-size: 1rem;
+        text-align: left;
+    }
 }

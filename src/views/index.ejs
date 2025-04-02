@@ -4,22 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Red Social</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="stylelogin.css" />
 	</head>
 	<body>
-		<form id="login">
-			<h2>Iniciar Sesión en un usuario existente</h2>
-			<label>
-				Nombre de Usuario
-				<input id="login-username" type="text" placeholder="Nombre de usuario" />
-			</label>
-			<label>
-				Contraseña
-				<input type="password" id="login-password" oninput="validarContraseña()" placeholder="Contraseña" />
-				<p id="mensajeError" style="color: red;"></p>
-			</label>
-			<button type="submit">Iniciar Sesión</button>
-		</form>
 		<form id="register">
 			<h2>Crear un nuevo usuario</h2>
 			<label>
@@ -36,6 +23,20 @@
 				<p id="mensajeError2" style="color: red;"></p>
 			</label>
 			<button type="submit">Registrarse</button>
+		</form>
+
+		<form id="login">
+			<h2>Iniciar Sesión en un usuario existente</h2>
+			<label>
+				Nombre de Usuario
+				<input id="login-username" type="text" placeholder="Nombre de usuario" />
+			</label>
+			<label>
+				Contraseña
+				<input type="password" id="login-password" oninput="validarContraseña()" placeholder="Contraseña" />
+				<p id="mensajeError" style="color: red;"></p>
+			</label>
+			<button type="submit">Iniciar Sesión</button>
 		</form>
 
 		<script src="/index.js"></script>

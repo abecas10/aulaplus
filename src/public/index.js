@@ -98,3 +98,28 @@ function validarContraseña2() {
 	mensajeError.textContent = '';
 	}
 }
+
+// Alternar entre formularios de login y registro
+document.addEventListener('DOMContentLoaded', function() {
+    // Crear botón de toggle
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'toggle-form';
+    toggleBtn.textContent = '¿No tienes cuenta? Regístrate aquí';
+    document.body.appendChild(toggleBtn);
+    
+    // Funcionalidad toggle
+    toggleBtn.addEventListener('click', function() {
+        const loginForm = document.getElementById('login');
+        const registerForm = document.getElementById('register');
+        
+        if (loginForm.style.display === 'none') {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            toggleBtn.textContent = '¿No tienes cuenta? Regístrate aquí';
+        } else {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            toggleBtn.textContent = '¿Ya tienes cuenta? Inicia sesión aquí';
+        }
+    });
+});

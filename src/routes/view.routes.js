@@ -37,4 +37,8 @@ router.get("/changepassword", async (req, res) => {
 	res.render("changepassword");
 });
 
+router.get("/deleteaccount", async (req, res) => {
+	res.render("deleteaccount");
+});
+
 export default router;

@@ -1,0 +1,79 @@
+/* ===== ESTILOS GENERALES (COHERENTES CON TUS OTROS DISEÑOS) ===== */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f9ff;
+    color: #2c3e50;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+/* ===== TITULOS (IGUAL QUE TUS OTROS FORMULARIOS) ===== */
+h1 {
+    color: #1a73e8;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    border-bottom: 2px solid #e0e9ff;
+    padding-bottom: 0.5rem;
+}
+
+#username {
+    color: #1a73e8;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+/* ===== BOTÓN (ESTILO PELIGROSO COMO EN TUS OTROS DISEÑOS) ===== */
+#delete-account {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto 0;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #fce8e6;
+    color: #d93025;
+    text-align: center;
+}
+
+#delete-account:hover {
+    background-color: #fad2cf;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(217, 48, 37, 0.2);
+}
+
+#delete-account:active {
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE (IGUAL QUE TUS OTROS DISEÑOS) ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 1.7rem;
+    }
+    
+    #username {
+        font-size: 1.8rem;
+    }
+    
+    #delete-account {
+        padding: 0.8rem;
+        max-width: 100%;
+    }
+}

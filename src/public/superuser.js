@@ -209,3 +209,24 @@ document.querySelectorAll("#delete_post_button").forEach(element => {
         location.replace(`${window.location.origin}/home`);
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.section-animate').forEach(section => {
+        observer.observe(section);
+    });
+});
