@@ -16,6 +16,7 @@
                 display: flex;
                 flex-direction: column;
                 transform: translateY(-70px);
+                
                 height: 500px;
                 margin-left: 250px;
                 width:450px;
@@ -47,11 +48,23 @@
             .textoPagos{
                 transform: translateY(70px-);
             }
+            footer {
+                display: flex;
+                background-color: #f0f0f0;
+                padding: 20px;
+                text-align: center;
+                font-size: 0.9em;
+                color: #555;
+                border-top: 1px solid #ddd;
+                flex-direction: row;
+                justify-content: space-around;
+            }
         </style>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
         <link rel="icon" type="image/png" href="imgs/Aula+_logo.jpg">
 
-        <link rel ="stylesheet" href="style2.css">
+        <link rel ="stylesheet" href="test.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,26 +76,22 @@
             <div class="colorone">
                 <div class="toolbar"> 
                     <ul class="options">
-                        <li class="Asignaturas">Mis Apuntes
-                            <ul class="AsignaturasDesplegable">
-                                <li>Mates</li>
-                                <li>Física y Química</li>
-                                <li>Informática</li>
-                                <li>Biología</li>
-                                <li>Sociales</li>
-                                <li>Castellano</li>
-                                <li>Catalán</li>
-                                <li>Inglés</li>
-                                <li>Francés</li>
-                            
-                            </ul>
-                        </li>
+                        <li class="Asignaturas">Mis Apuntes</li>
                         <li class="Clases">Clases</li>
                         <li class="Agenda_Digital">Agenda digital</li>
+                        <li class="Opiniones">Opiniones</li>
+                        <li class="SuperUsers">Super Users</li>
+                        <li class="user" id="user_name">User</li>
 
                     </ul>
                 </div>
-                <p class="Title">Aula+</p>
+                <p class="Title">Aula+ </p>
+                <p class="Slogan">Learn Smarter, Not harder.</p>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="100">
+                        <path d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z" data-name="2-Arrow Down" fill="white"/>
+                    </svg>
+                </div>
             
 
             </div>
@@ -139,8 +148,12 @@
                             <li class="textoPagos">Lenguas: 10€</li>
                             <li class="textoPagos">Sociales: 13€</li>
                             <li class="textoPagos">Informática: 12€</li>
-
+                        
                         </ul>
+                        <p class="textoTipoPago">Pagos</p>
+                        <p class="textoTipoPago"> ¿A quién tengo que pagar y de qué forma?</p>
+                        <p class="textoTipoPago">Bizum --> +34 669 57 71 81</p>
+                        <p class="textoTipoPago">Físico a Gabriel, Àlex o Irene, como mínimo monedas de 50 céntimos</p>
                     </div>
 
                 </div>
@@ -148,42 +161,15 @@
 
 
             </div>
-
-            <div class="toolbar"> 
-                <ul class="options">
-                    <li class="Asignaturas" id="apuntes">Apuntes y Esquemas
-                        <ul class="AsignaturasDesplegable">
-                            <li>Mates</li>
-                            <li>Física y Química</li>
-                            <li>Informática</li>
-                            <li>Biología</li>
-                            <li>Sociales</li>
-                            <li>Castellano</li>
-                            <li>Catalán</li>
-                            <li>Inglés</li>
-                            <li>Francés</li>
-
-                        </ul>
-                    </li>
-                    <li class="Clases">Clases</li>
-                    <li class="Agenda_Digital">Agenda digital</li>
-                    <li class="Agenda_Digital" id="contactoBtn">Opiniones</li>
-                    <li><a href="/superuser">Superusuario</a></li>
-                </ul>
-            </div>
-
-            <div class="arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="100">
-                    <path d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z" data-name="2-Arrow Down" fill="white"/>
-                </svg>
-            </div>
         </main>
+
         <footer>
 			<p>&copy; Site made by: Albecas100 & Gabriel Cereto</p>
 			<p>&copy; All rights reserved</p>
-			<button id="logout">Logout</button>
+			<button id="credits">Creditos</button>
 		</footer>
 
         <script src="aulaplus.js"></script>
+
     </body>
 </html>

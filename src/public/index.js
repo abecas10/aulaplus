@@ -75,6 +75,9 @@ document.querySelector("#login").addEventListener("submit", async event => {
 		}
 		location.replace(`${location.origin}/aulaplus`);
 	}
+	else{
+		alert("Error al iniciar sesión. Verifica tu usuario y contraseña.");
+	}
 });
 
 function validarContraseña() {

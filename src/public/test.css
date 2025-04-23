@@ -1,0 +1,595 @@
+
+@font-face { /*Create/import downloaded font*/
+    font-family: "Lactos";
+    src: url(DxLactos-Regular-free-personal-use.otf);
+}
+
+
+@keyframes scrollAnimation{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(140px);
+    }
+}
+@keyframes scrollAnimationTablet{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(30px);
+    }
+}
+@keyframes textScrollAnimation{
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+        display: hidden;
+
+    }
+
+    to{
+        display:block;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes scrollAnimationRight{
+
+    from{
+        opacity: 0;
+        transform:translateX(100px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(-100px);
+        transform: translateY(-70px);        
+    }
+}
+@media (max-width: 100000px) {
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            padding: 0;
+            margin:0;
+            overflow-x: hidden;
+            
+        }
+        .colorone {
+
+            /*background-color: rgb(64,93,114);*/
+            background-image: url(https://www.aula-ee.com/wp-content/uploads/2020/03/foto-edifici-primaria.jpg);
+            
+            /*Scroll effect */
+            background-attachment: fixed;
+            background-position:center ;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh; /*vh is viewport hright (I guess)*/
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .other_color{
+            display: flex;
+            flex-direction: column;
+            height: 250vh;
+            background-color: rgb(247,231,220);
+        }
+        .Title{
+
+            display: block;
+            font-family: "Lactos";
+            color: #F3F3F3;
+            font-size: 400px;
+            align-self: center;
+        
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 50px;
+            height: 350px;
+        
+        
+        }
+        .Slogan{
+            margin-top: 40px;
+            display: block;
+            font-family: "Poppins",sans-serif;
+            color: #F3F3F3;
+            font-style: italic;
+            font-size: 30px;
+        }
+        
+        .toolbar{
+            
+            z-index: 1000;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 70px;
+            background-color: #3275a8;
+            align-self: baseline;
+
+            top: 0;
+            left: 0;
+            
+        }
+        
+        .Asignaturas{
+        
+            margin-top: 8px;
+            font-family: "Poppins",sans-serif;
+            width:150px;
+            margin-right: 0;
+            cursor: pointer;
+        }
+        
+        
+        .options{
+            display: flex;
+            width: 1000px;
+        }
+        
+        
+        .options li{
+            
+            color:white
+        }
+        
+
+        .options ul{
+            
+            top:100%;
+            visibility: hidden; /*not interactable when hidden*/
+            opacity: 0;
+            display: block;
+            border:none;
+            font-size:15px;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+        
+        /*
+        .options li:hover ul{
+            cursor: pointer;
+            display: block;
+            background-color: rgba(50,117,168,0.75);
+            width:150px;
+            height:370px;
+            border: solid white;
+            margin-top:5px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            
+            color:rgba(255, 255, 255,1);
+        
+        
+        }
+        
+        */
+        
+        
+        .options ul li{
+            margin-top:15px;
+        
+        }
+        
+        .options ul li:hover{
+            background: #2b648f;
+        }
+        
+        .AsignaturaDesplegable{
+            position: absolute;
+            top: 100%;
+        }
+        .Clases{
+            
+            margin-top:8px;
+            position: static;
+            font-family: "Poppins",sans-serif;
+            width:100px;
+            display: inline-flex,list-item; /*list-item makes it behave as a list (ul, ol) and it has the dot*/
+            margin-left: 0px;/*btw ul is Unordered List and ol is Ordered List, I guess*/
+            margin-right: 0;
+            transform: translateX(0px);
+            cursor: pointer;
+        }
+        
+        .Agenda_Digital{
+        
+            margin-top: 8px;
+            position: absolute;
+            font-family: "Poppins",sans-serif;
+            width:150px;
+            display: inline-flex,list-item; /*list-item makes it behave as a list (ul, ol) and it has the dot*/
+            margin-left: 0px; /*btw ul is Unordered List and ol is Ordered List, I guess*/
+            margin-right: 0;
+            transform: translateX(260px);
+            cursor: pointer;
+        }
+        
+        .arrow{
+        
+            position: absolute;
+            
+            top:80%;
+            left:48%;
+        }
+        
+        .toilet{
+            height: 75px;
+            width:300px;
+            background-color: brown;
+            border-color: #F3F3F3;
+            animation: scrollAnimation 1s linear;
+            animation-timeline: view();
+            animation-range:entry 0% cover 60%;
+        }
+        
+        .avgTitle{
+        
+            display: block;
+            font-family: "Poppins",sans-serif;
+            font-weight: bold;
+            color: black;
+            font-size: 100px;
+            margin-left: 50px;
+            animation: textScrollAnimation 1s linear;
+            animation-timeline: view();
+            animation-range:entry 0% cover 60%;
+        }
+        
+        .Container{
+            
+            height:500px;
+            width:57%;
+            background: linear-gradient(180deg, rgba(52,59,135,1) 19%, rgba(26,102,208,1) 100%);
+            border-radius: 20px;
+            transform: translateX(140px);
+            margin-left: 0px;
+            padding-top: 30px;
+            margin-top:-70px;
+        
+                
+            animation: scrollAnimation 1s linear;
+            animation-timeline: view();
+            animation-range:entry 0% cover 50%;
+            
+        }
+        .textQueHacemos{
+            color:white;
+            font-size: 20px;
+            margin-left: 40px;
+            width:700px;
+            font-family: "Poppins";
+            margin-bottom: 50px;
+        
+        
+        }
+        .ImgApuntes1{
+            width: 100px;
+            height: 100px;
+            background-image: url("Aula+/imgs/ImgApuntes1.jpg");
+        }
+        
+        .textoPagos{
+
+            color:white;
+            font-size: 20px;
+            margin-left: 40px;
+            width:700px;
+            font-family: "Poppins";
+            margin-bottom: 50px;
+        }
+        .PreciosYPagos{
+            display: grid;
+            grid-template-columns:2000px;
+            grid-template-rows: 250px 600px;
+        }
+        .Container2{
+        
+            height:800px;
+            width:57%;
+            background: linear-gradient(180deg, rgba(52,59,135,1) 19%, rgba(26,102,208,1) 100%);
+            border-radius: 20px;
+            transform: translateX(140px);
+            margin-left: 0px;
+            padding-top: 30px;
+            height: 1000px;
+        
+            animation: scrollAnimation 1s linear;
+            animation-timeline: view();
+            animation-range:entry 0% cover 30%;
+            
+        }
+        .textoTipoPago{
+            color:white;
+            font-size: 20px;
+            margin-left: 40px;
+            width:700px;
+            font-family: "Poppins";
+            margin-bottom: 0px;
+        }
+        .ListaPrecios{
+            margin-left: 40px;
+        }
+        
+        .ListaPrecios li{
+            margin-bottom: 20px;
+        }
+
+        
+        .SuperUsers{
+
+            margin-top: 8px;
+            margin-left: 0;
+            width: 150px;
+            font-family: "Poppins",sans-serif;
+            font-size: 16px;
+            transform: translateX(570px);
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .user{
+            
+            margin-top: 8px;
+            position: relative;
+            display: inline-flex,list-item;
+            font-family: "Poppins",sans-serif;
+            font-size:  16px;
+            left: 150%;
+            cursor: pointer;
+            
+        }
+        .Opiniones{
+            margin-top: 8px;
+            margin-left: 0;
+            width: 150px;
+            font-family: "Poppins",sans-serif;
+            font-size: inherit;
+            transform: translateX(430px);
+            position: absolute;
+            cursor: pointer;
+        }
+
+    }
+
+    @media only screen and (max-width:600px){
+    
+        @keyframes scrollAnimation{
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+        
+            to{
+                opacity: 1;
+                transform: translateX(50px);
+            }
+        }
+    
+        body{
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .colorone{
+            width: 100%;
+            background-color: rgb(64,93,114);
+        }
+    
+        .toolbar{
+            width: 100%;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+        
+        /*
+        .options li:hover ul {
+            position: fixed;
+            width: 150px;
+            height: auto;
+            max-height: 370px;
+            top: 70px;
+            left: 10px;
+            z-index: 1000;
+            overflow-y: auto;
+            background-color: rgba(50,117,168,0.95);
+            visibility: visible;
+            opacity: 1;
+            pointer-events: all;
+            border: 1px solid white;
+        }
+        */
+
+        .user{
+
+            margin-top: 8px;
+            position: relative;
+            display: inline-flex,list-item;
+            font-family: "Poppins",sans-serif;
+            font-size:  16px;
+            left: 50%;
+            
+        }
+
+        .Slogan{
+            margin-top: -200px;
+            font-size: 15px;
+        }
+        /*
+        .options ul li{
+            margin: 15px 0;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        */
+        .Title{
+            font-size: 130px;
+        }
+        
+        .arrow{
+            position: absolute;
+            top: 80%;
+            left: 37%;
+        }
+        
+        .avgTitle{
+            font-size: 40px;
+            display: block;
+            margin-bottom: 0px;
+        }
+        
+        .Container{
+            margin-top: 20px;
+            margin-left: -20px;
+            min-width: 350px;
+            transform: translateX(50px);
+            margin-bottom: 40px;
+        }
+        
+        .textQueHacemos{
+            font-size: 20px;
+            width: 300px;
+            margin-left: 50px;
+        }
+    
+        .Container2{
+            margin-top: -170px;
+            width: 350px;
+            margin-left: 0px;
+            transform: translateX(36px);
+            height: 1000px;
+            animation: scrollAnimation 1s linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+    
+        .textoPagos{
+            margin-top: 0px;
+            font-size: 15px;
+            margin-left: 10px;
+        }
+        
+        .Asignaturas{
+            
+            margin-top: 8px;
+            font-family: "Poppins", sans-serif;
+            width: 100px;
+            margin-right: 0;
+        }
+
+        
+        .Clases{
+            margin-top: 8px;
+            position: static;
+            font-family: "Poppins", sans-serif;
+            width: 100px;
+            display: inline-flex;
+            margin-left: 30px;
+            margin-right: 0;
+        }
+                
+        .Agenda_Digital{
+            margin-top: 8px;
+            position: absolute;
+            font-family: "Poppins", sans-serif;
+            width: 150px;
+            display: inline-flex;
+            margin-left: 0px;
+            margin-right: 0;
+            transform: translateX(240px);
+            cursor: pointer;
+        }
+    }
+
+
+    
+@media only screen and (min-device-width:601px) and (max-device-width:1024px){
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    html{
+        overflow-x: hidden;
+    }
+
+    .colorone{
+        background-image: none;
+        background-color: #2b648f;
+    }
+    .Title{
+        font-size: 280px;
+        margin-left: 100px;
+    }
+    .Container{
+        min-width: 450px;
+        transform: translateX(30px);
+        animation: scrollAnimationTablet 1s linear;
+        animation-timeline: view();
+        animation-range:entry 0% cover 50%;
+    }
+    .textQueHacemos{
+        margin-left: 30px;
+        width:80%;
+    }
+    .Images{
+        
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-70px);
+        transform: translateX(-100px);
+        height: 500px;
+        margin-left: 150px;
+        width:250px;
+
+        animation: scrollAnimationRight 1s linear;
+        animation-timeline: view();
+        animation-range:entry 0% cover 30%;
+    }
+    .avgTitle{
+        font-size: 70px;   
+         
+    }
+    .Container2{
+        margin-top: -120px;
+        width: 600px;
+        height: 1000px;
+        transform: translateX(130px);
+        
+    }
+    .Slogan{
+        margin-top: -50px;
+        margin-left: 40px;
+    }
+    .textoTipoPago{
+        font-size:16px;
+    }
+    
+
+}
+
+
+

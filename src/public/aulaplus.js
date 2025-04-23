@@ -1,12 +1,41 @@
-document.querySelector("#logout").addEventListener("click", () => {
-	localStorage.removeItem("token");
-	localStorage.removeItem("superuser");
-	localStorage.removeItem("username");
-	localStorage.removeItem("mail");
-	alert("Te has deslogueado correctamente");
-	window.location.reload();
+window.onload = async function () {
+	const check = await fetch(`${window.location.origin}`);
+	if (!check.ok) {
+		window.location.replace(`${window.location.origin}/serverdown`);
+	}
+};
+
+
+document.querySelector("#credits").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/credits`);
 });
 
-document.querySelector("#apuntes").addEventListener("click", () => {
-	location.replace(`${window.location.origin}/apuntes`);
+let username = localStorage.getItem("username");
+if (!username) {
+	username = "Login";
+}
+document.querySelector("#user_name").textContent = username;
+
+document.querySelector("#user_name").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/me`);
+});
+
+document.querySelector(".Asignaturas").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/apuntes`);
+});
+
+document.querySelector(".Clases").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/clases`);
+});
+
+document.querySelector(".Agenda_Digital").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/agenda_digital`);
+});
+
+document.querySelector(".Opiniones").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/home`);
+});
+
+document.querySelector(".SuperUsers").addEventListener("click", () => {
+	window.location.replace(`${window.location.origin}/superuser`);
 });

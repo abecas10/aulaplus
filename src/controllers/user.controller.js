@@ -50,7 +50,7 @@ export async function register(req, res) {
 			from: 'contacto.aula.pus@gmail.com',
 			to: mail,
 			subject: '¡Bienvenido a Aula +!',
-			text: `Hola ${username}, ¡bienvenido a Aula +!\nMuchas gracias por registrarte.\n\n¡No olvides echarle un vistazo a todos los servicios que ofrecemos!\n\nSi tienes alguna duda, no dudes en ponerte en contacto con nosotros.\n\nSaludos,\nAula +\n\n\n---------------------\n©2025-2026 Aula +\nContenido exclusivo de Aula +\n©Todos los derechos reservados\nContacto: contacto.aula.plus@gmail.com\nFundadores y Propietarios: Àlex Castellà & Irene Loewe & Gabriel Cereto\nAula +, Because Studying Shouldn’t Be a Struggle.\n---------------------`,
+			text: `Hola ${username}, ¡bienvenido a Aula +!\nMuchas gracias por registrarte.\n\n¡No olvides echarle un vistazo a todos los servicios que ofrecemos!\n\nSi tienes alguna duda, no dudes en ponerte en contacto con nosotros.\n\nSaludos,\nAula +\n\n\n---------------------\n©2025-2026 Aula +\nContenido exclusivo de Aula +\n©Todos los derechos reservados\nContacto: contacto.aula.plus@gmail.com\nFundadores y Propietarios: Àlex Castellà & Irene Loewe & Gabriel Cereto\nAula +, Learn Smarter, Not harder.\n---------------------`,
 		};
 		
 		transporter.sendMail(mailOptions, (error, info) => {
