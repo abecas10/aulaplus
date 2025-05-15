@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const createdAtStr = element.dataset.createdAt;
 		const createdAt = new Date(createdAtStr.replace(' ', 'T'));
 		const now = new Date();
-		const diffSeconds = Math.floor((now - createdAt) / 1000) - 3600;
+		const diffSeconds = Math.floor((now - createdAt) / 1000) - 3600 - 3600;
 
 	if (diffSeconds < 60) {
 		element.textContent = 'Hace unos segundos';

@@ -41,10 +41,6 @@ router.get("/deleteaccount", async (req, res) => {
 	res.render("deleteaccount");
 });
 
-router.get("/serverdown", async (req, res) => {
-	res.render("serverdown");
-});
-
 router.get("/credits", async (req, res) => {
 	res.render("credits");
 });

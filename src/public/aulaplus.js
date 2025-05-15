@@ -1,7 +1,7 @@
 window.onload = async function () {
 	const check = await fetch(`${window.location.origin}`);
 	if (!check.ok) {
-		window.location.replace(`${window.location.origin}/serverdown`);
+		window.location.replace(`https://abecas10.github.io/aulaplusdown/`);
 	}
 };
 
